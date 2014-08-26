@@ -10,6 +10,7 @@ var morgan         = require('morgan'),
     debug          = require('../lib/debug'),
     home           = require('../controllers/home'),
     users          = require('../controllers/users');
+    //goals          = require('../controllers/goals');
 
 module.exports = function(app, express){
   app.use(morgan('dev'));
@@ -30,7 +31,9 @@ module.exports = function(app, express){
 
   app.use(security.bounce);
   app.delete('/logout', users.logout);
+  //app.get('/goals/new', goals.new);
+  //app.post('/goals/new', goals.create);
+  //app.get('/goals', goals.index);
 
   console.log('Express: Routes Loaded');
 };
-
